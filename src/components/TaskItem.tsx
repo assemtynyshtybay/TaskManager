@@ -2,7 +2,9 @@ import { styled } from '@mui/material'
 import { FC } from 'react'
 import { UserTask } from '../types/usersTasksTypes'
 import moment from 'moment';
-// import { useDrag } from 'react-dnd';
+
+import { useDrag } from 'react-dnd';
+import {itemTypes} from '../constants';
 // import { useDragDropManager } from 'react-dnd';
 
 const Card = styled('div')`
@@ -20,27 +22,26 @@ const El = styled('div')`
 `
 type Props = {
     item: UserTask;
+    status: string;
 }
-export const TaskItem:FC<Props> = ({ item }) => {
+export const TaskItem:FC<Props> = ({ item ,status}) => {
   const date = new Date(item.createTimestamp);
-  // const dragDropManager = useDragDropManager()
-  // const [{ opacity }, dragRef] = useDrag(
-  //   () => ({
-  //     type,
-  //     item: { item },
-  //     collect: (monitor) => ({
-  //       opacity: monitor.isDragging() ? 0.5 : 1
-  //     })
-  //   }),
-  //   []
-  // )
+  const [{ isDragging }, drag] = useDrag({
+    type: itemTypes.CARD,
+    collect: (monitor) => ({
+      isDragging: !!monitor.isDragging(),
+    }),
+  });
+  
   return (
-    <Card>
-      <El>
-        <button style={{width: '100px', backgroundColor: '#27AE60',padding: '3px', borderRadius: '8px'}} type="button">{item.taskTypeName}</button>
-      </El>
-      <El>{moment(date).format('d MMMM, в HH:MM')}</El>
-      <El>{item.clientName}</El>
+    <Card ref={drag} style={{ opacity: isDragging ? 0.5 : 1}}> 
+      <div role="Handle" ref={drag}>
+        <El>
+          <button style={{width: '100px', backgroundColor: '#27AE60',padding: '3px', borderRadius: '8px'}} type="button">{item.taskTypeName}</button>
+        </El>
+        <El>{moment(date).format('d MMMM, в HH:MM')}</El>
+        <El>{item.clientName}</El>
+      </div>
     </Card>
   )
 }

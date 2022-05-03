@@ -3,6 +3,13 @@ export enum UserTaskActionType {
   FETCH_USER_TASKS_SUCCESS = 'FETCH_USERS_SUCCESS',
   FETCH_USER_TASKS_REJECT = 'FETCH_USERS_REJECT'
 }
+export enum ColumnEnum {
+  O = 'overdue',
+  T ='today',
+  R ='tomorrow',
+  A ='dat',
+  F ='future',
+}
 export type UserTask = {
   clientId: string,
   clientName: string,

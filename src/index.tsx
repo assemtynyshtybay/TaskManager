@@ -5,15 +5,19 @@ import App from './App'
 import { store } from './store'
 
 import { DndProvider } from 'react-dnd'
-import { HTML5Backend } from 'react-dnd-html5-backend'
+// import { DndProvider } from 'react-dnd-multi-backend';
+import { HTML5Backend } from 'react-dnd-html5-backend';
+
+// import MultiBackend from 'react-dnd-multi-backend';
+// import HTML5toTouch from 'react-dnd-multi-backend/dist/esm/HTML5toTouch';
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
 )
 root.render(
-    <Provider store={store}>
-      <DndProvider backend={HTML5Backend}>
-        <App/>
-      </DndProvider>
-    </Provider>
+    <DndProvider backend={HTML5Backend}>
+      <Provider store={store}>
+          <App/>
+      </Provider>
+    </DndProvider>
 )
