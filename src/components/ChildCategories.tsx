@@ -11,6 +11,7 @@ const DropDown = styled('div')`
   list-style-type: none;
   box-shadow: 2px 0px 8px 0px rgba(0,0,0,0.2);
   &:hover {
+    box-shadow: 8px 0px 8px 5px rgba(0,0,0,0.2);
     .content2 {
       display: block;
     }

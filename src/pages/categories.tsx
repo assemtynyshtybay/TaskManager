@@ -12,10 +12,11 @@ const Category = styled('div')`
 `
 const DropDown = styled('div')`
   padding: 5px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 8px 0px 8px 2px rgba(0,0,0,0.2);
   display: inline-block;
   
   &:hover {
+    box-shadow: 2px 0px 2px 0px rgba(125,125,125,0.2);
     .content1 {
       display: inline-block;
       position: absolute;
