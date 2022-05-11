@@ -14,6 +14,7 @@ const DropDown = styled('div')`
   padding: 5px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   display: inline-block;
+  
   &:hover {
     .content1 {
       display: inline-block;
@@ -27,10 +28,11 @@ const DropDownContent = styled('div')`
   left: 210px;
   position: absolute;
   background-color: white;
+  height: 100%;
   min-width: 200px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
-  
+  overflow-y: auto;
 `
 const Categories = () => {
   const {data, loading} = useTypedSelector((state) => state.categ)

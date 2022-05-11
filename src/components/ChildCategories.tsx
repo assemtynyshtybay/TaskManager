@@ -9,11 +9,10 @@ const DropDown = styled('div')`
   padding: 5px;
   color: black;
   list-style-type: none;
+  box-shadow: 2px 0px 8px 0px rgba(0,0,0,0.2);
   &:hover {
     .content2 {
-      position: absolute;
       display: block;
-      top: 0 px;
     }
   }
 `
