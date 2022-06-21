@@ -1,6 +1,7 @@
 {
   "name": "rick-and-morty",
   "version": "0.1.0",
+  "homepage": "https://gitname.github.io/react-gh-pages",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.9.0",
@@ -19,6 +20,7 @@
     "@types/react-router-dom": "^5.3.3",
     "axios": "^0.27.2",
     "drag-and-drop": "^0.0.2",
+    "gh-pages": "^4.0.0",
     "mobx": "^6.5.0",
     "moment": "^2.29.3",
     "react": "^18.1.0",
@@ -35,11 +37,14 @@
     "redux": "^4.2.0",
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.4.1",
+    "serve": "^13.0.2",
     "styled-components": "^5.3.5",
     "typescript": "^4.4.2",
     "web-vitals": "^2.1.0"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
