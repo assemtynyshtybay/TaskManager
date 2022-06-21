@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/TaskManager/static/js/main.0ca6bcec.js",
+    "index.html": "/TaskManager/index.html",
+    "main.0ca6bcec.js.map": "/TaskManager/static/js/main.0ca6bcec.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.0ca6bcec.js"
+  ]
+}
