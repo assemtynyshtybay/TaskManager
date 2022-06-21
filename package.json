@@ -20,7 +20,6 @@
     "@types/react-router-dom": "^5.3.3",
     "axios": "^0.27.2",
     "drag-and-drop": "^0.0.2",
-    "gh-pages": "^4.0.0",
     "mobx": "^6.5.0",
     "moment": "^2.29.3",
     "react": "^18.1.0",
@@ -67,5 +66,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
   }
 }
